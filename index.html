@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NumVirtualProBot App</title>
+  <style>
+    body { background:#121212; color:#f1f1f1; font-family:sans-serif; padding:1em; }
+    h1 { text-align:center; }
+    button { 
+      width:100%; margin:0.5em 0; padding:1em; 
+      background:#1f1f1f; border:none; border-radius:8px; 
+      font-size:1em; color:#f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <h1>NumVirtualProBot</h1>
+  <button id="list">📋 Ver Números</button>
+  <button id="status">🛒 Mis Compras</button>
+  <button id="payments">💳 Métodos de Pago</button>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    document.getElementById('list').onclick    = () => tg.sendData('show_list');
+    document.getElementById('status').onclick  = () => tg.sendData('show_status');
+    document.getElementById('payments').onclick= () => tg.sendData('show_payments');
+  </script>
+</body>
+</html>
